@@ -1,26 +1,67 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Token Dasar */
+  --paper: #F7F5F0;
+  --paper-2: #EFECE4;
+  --white: #FFFFFF;
+  --ink: #0F1729;
+  --ink-2: #424C61;
+  --ink-3: #5F6A7E;
+  --line: #E4E1D8;
+  --line-2: #CFCBBF;
+
+  /* Biru */
+  --blue-50: #F1F4FB; --blue-100: #E1E8F7; --blue-200: #C5D3EF; --blue-300: #9AB2E3;
+  --blue-400: #6C8DD3; --blue-500: #4A6FC0; --blue-600: #2F54A8; --blue-700: #254389;
+  --blue-800: #1B3166; --blue-900: #12214A; --blue-950: #0A1432;
+
+  /* Semantik */
+  --success: #1F7A4D; --warning: #8A5A00; --danger: #B3261E; --info: var(--blue-600);
+
+  /* Palet A (Default) */
+  --brand: var(--blue-600); --brand-hover: var(--blue-700); --brand-tint: var(--blue-50);
+  --accent: #C2481A; --accent-hover: #A63B12; --accent-tint: #FBE9E1;
+  --cta: var(--accent); --cta-hover: var(--accent-hover); --cta-ink: #FFFFFF;
+
+  /* Tipografi */
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "DM Mono", ui-monospace, Menlo, monospace;
+
+  /* Radius */
+  --r-sm: 4px;
+  --r-md: 8px;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-line: var(--line);
+  --color-line-2: var(--line-2);
+  --color-brand: var(--brand);
+  --color-accent: var(--accent);
+  --color-cta: var(--cta);
+  --color-cta-ink: var(--cta-ink);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+  --radius-sm: var(--r-sm);
+  --radius-md: var(--r-md);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
